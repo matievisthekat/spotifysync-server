@@ -2,9 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    // "jsx": "preserve",
+    "resolveJsonModule": true,
     "outDir": "dist",
-    "rootDir": "src",
+    // "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

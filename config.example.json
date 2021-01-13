@@ -1,0 +1,8 @@
+{
+  "client_id": "your client id",
+  "client_secret": "your client secret",
+  "access_token": "a valid access token",
+  "refresh_token": "a valid refresh token",
+  "expires_in": "the amount of time (in seconds) until the access token expires. Make sure this is a number not a string",
+  "fetched_timestamp": "a timestamp of when the tokens were fetched. make sure this is a number not a string"
+}
