@@ -7,6 +7,7 @@ import Spotify from "../types/spotify-api";
 import { isTokenExpired, refreshToken, getPlayerState } from "./spotify";
 
 const port = process.env.PORT || 3000;
+const intervalSeconds = 1.5;
 const app = express();
 const server = app.listen(port, () => console.log(`Listening on localhost:${port}`));
 const io = new Server(server);
@@ -22,11 +23,15 @@ let state: SocketState = {
 async function tick() {
   const expired = isTokenExpired();
   if (expired) await refreshToken();
+  console.log("Expired:", expired);
 
-  const player = await getPlayerState();
+  const player = await getPlayerState().catch(async (err) => {
+    if (err.response.status === 401) await refreshToken();
+  });
+  if (!player) return;
 
   if (player.item?.id !== state.item?.id) updateItem(player.item);
-  if (player.device.volume_percent !== state.volume_percent) updateVolume(player.device.volume_percent);
+  if (player.device?.volume_percent !== state.volume_percent) updateVolume(player.device?.volume_percent);
   if (player.is_playing !== state.is_playing) updatePlaying(player.is_playing);
   if (player.progress_ms !== state.progress_ms) updateProgress(player.progress_ms);
   if (player.currently_playing_type !== state.currently_playing_type) updateCurrentType(player.currently_playing_type);
@@ -61,12 +66,14 @@ function updateCurrentType(newType: CurrentlyPlayingType) {
   state.currently_playing_type = newType;
 }
 
-tick().then(() =>
-  setInterval(async () => {
-    if (io.sockets.sockets.size > 0) await tick().catch((err) => console.log(err.response.data));
-  }, 3000)
-);
+tick()
+  .catch((err) => console.log(err.response?.data || err))
+  .finally(() => {
+    setInterval(async () => {
+      if (io.sockets.sockets.size > 0) await tick().catch((err) => console.log(err.response?.data || err));
+    }, intervalSeconds * 1000);
+  });
 
-io.on("connection", (socket) => {
+io.on("connection", (socket: Socket) => {
   socket.emit("initial_state", state);
 });
