@@ -25,10 +25,7 @@ async function tick() {
   if (expired) await refreshToken();
   console.log("Expired:", expired);
 
-  const player = await getPlayerState().catch(async (err) => {
-    if (err.response.status === 401) await refreshToken();
-  });
-  if (!player) return;
+  const player = await getPlayerState();
 
   if (player.item?.id !== state.item?.id) updateItem(player.item);
   if (player.device?.volume_percent !== state.volume_percent) updateVolume(player.device?.volume_percent);
