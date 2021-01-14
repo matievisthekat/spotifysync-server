@@ -47,7 +47,7 @@ A WebSocket server used to transmit information to any TuneIn app that tries to 
 
 15. In your cloned repository create a file called `config.json` in the root directory
 
-16. Enter this context (replace all necessary values)
+16. Enter this content (replace all necessary values)
 ```json
 {
   "client_id": "your client id",
