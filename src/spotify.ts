@@ -12,7 +12,7 @@ export function getPlayerState() {
   return new Promise<PlayerState>((resolve, reject) => {
     Axios.get<PlayerState>(`${API}/me/player`, {
       headers: {
-        Authorization: `Bearer ${config.access_token}`,
+        Authorization: `Bearer ${require("../config").access_token}`,
       },
     })
       .then((res) => resolve(res.data))
@@ -53,6 +53,8 @@ export function refreshToken() {
           expires_in,
           fetched_timestamp,
         });
+
+        delete require.cache[path.join(__dirname, "..", "config.json")];
 
         resolve();
       })
