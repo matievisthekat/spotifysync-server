@@ -43,9 +43,9 @@ A WebSocket server used to transmit information to any TuneIn app that tries to 
 13. It should say something like `{"access_token":"BQCRWpB8.....1hcxKsks","token_type":"Bearer","expires_in":3600,"refresh_token":"AQD.....FVUPjQ","scope":"user-read-playback-state"}`. If it doesn't you will need to restart from step 4
 <img src="https://i.imgur.com/uxPncLR.png" />
 
-14. Fork this repository. Be sure to make your fork private!
+14. Clone (not fork!) this repository. Be sure to make it private!
 
-15. In your fork create a file called `config.json` in the root directory
+15. In your cloned repository create a file called `config.json` in the root directory
 
 16. Enter this context (replace all necessary values)
 ```json
@@ -55,31 +55,11 @@ A WebSocket server used to transmit information to any TuneIn app that tries to 
   "access_token": "access_token from output.txt",
   "refresh_token": "refresh_token from output.txt",
   "expires_in": 3600,
-  "fetched_timestamp": "the current timestamp (you can get it from https://www.currenttimestamp.com/). remove the double quotes after pasting"
+  "fetched_timestamp": "the current timestamp (you can get it from https://www.currenttimestamp.com). remove the double quotes after pasting"
 }
 ```
 
-16. Go to https://www.heroku.com/ and login/sign up. You should be redirected to https://dashboard.heroku.com/apps
+16. Run `yarn start` or `yarn pm2`
 
-17. Create a new app
-<img src="https://i.imgur.com/fCbOI1H.png" />
-
-18. Choose your app name and region. Then click "Create app"
-<img src="https://i.imgur.com/nrJFGWq.png" />
-
-19. Under "Deployment method" click "GitHub" then "Connect to GitHub"
-<img src="https://i.imgur.com/EvCIzMC.png" />
-
-20. Authorize Heroku
-<img src="https://i.imgur.com/GTgPefE.png" />
-
-21. Under "Deployment method" there should be an area like this
-<img src="https://i.imgur.com/z9VeTvz.png" />
-
-22. Type "tunein-server" (or the name of your fork) and click search
-<img src="https://i.imgur.com/XwyB3bT.png" />
-
-23. Next to your repository click "Connect"
-
-24. Scroll down to "Manual deploy" and click "Deploy branch
+17. That's it! To connect to your server via the app you will need to get your server's public IP or setup a domain name
 
