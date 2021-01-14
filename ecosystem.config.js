@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "tunein-server",
-      script: "dist/src/index.js",
+      script: "src/index.js",
     },
   ],
 };

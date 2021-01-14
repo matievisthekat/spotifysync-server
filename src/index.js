@@ -1,10 +1,8 @@
 require("dotenv").config();
 
-import express from "express";
-import { Server, Socket } from "socket.io";
-import { CurrentlyPlayingType, SocketState } from "../types";
-import Spotify from "../types/spotify-api";
-import { isTokenExpired, refreshToken, getPlayerState } from "./spotify";
+const express = require("express");
+const { Server } = require("socket.io");
+const { isTokenExpired, refreshToken, getPlayerState } = require("./spotify.js");
 
 const port = process.env.PORT || 3000;
 const intervalSeconds = 1.5;
@@ -16,7 +14,7 @@ app.get("/", (req, res) => res.status(200).json({ success: true, message: "tunei
 const server = app.listen(port, () => console.log(`Listening on localhost:${port}`));
 const io = new Server(server);
 
-let state: SocketState = {
+let state = {
   progress_ms: null,
   currently_playing_type: null,
   is_playing: null,
@@ -38,31 +36,31 @@ async function tick() {
   if (player.currently_playing_type !== state.currently_playing_type) updateCurrentType(player.currently_playing_type);
 }
 
-function broadcast(e: string, ...args: any) {
+function broadcast(e, ...args) {
   io.sockets.emit(e, ...args);
 }
 
-function updateItem(newItem: Spotify.TrackObjectFull | null) {
+function updateItem(newItem) {
   broadcast("track_change", state.item, newItem);
   state.item = newItem;
 }
 
-function updateVolume(newVol: number) {
+function updateVolume(newVol) {
   broadcast("volume_change", state.volume_percent, newVol);
   state.volume_percent = newVol;
 }
 
-function updatePlaying(newPlaying: boolean) {
+function updatePlaying(newPlaying) {
   broadcast("is_playing_change", state.is_playing, newPlaying);
   state.is_playing = newPlaying;
 }
 
-function updateProgress(newProgress: number) {
+function updateProgress(newProgress) {
   broadcast("progress_change", state.progress_ms, newProgress);
   state.progress_ms = newProgress;
 }
 
-function updateCurrentType(newType: CurrentlyPlayingType) {
+function updateCurrentType(newType) {
   broadcast("currently_playing_type_change", state.currently_playing_type, newType);
   state.currently_playing_type = newType;
 }
@@ -75,6 +73,6 @@ tick()
     }, intervalSeconds * 1000);
   });
 
-io.on("connection", (socket: Socket) => {
+io.on("connection", (socket) => {
   socket.emit("initial_state", state);
 });
