@@ -5,7 +5,7 @@
   "main": "dist/src/index.js",
   "scripts": {
     "compile": "tsc",
-    "start": "yarn compile && node .",
+    "start": "yarn compile && node dist/src/index.js",
     "pm2": "yarn compile && pm2 start"
   },
   "repository": {
