@@ -9,7 +9,7 @@ const intervalSeconds = 1.5;
 const app = express();
 app.set("json spaces", 2);
 
-app.get("/", (req, res) => res.status(200).json({ success: true, message: "tunein-server is up and running!" }));
+app.get("/", (req, res) => res.status(200).json({ success: true, message: "spotifysync-server is up and running!" }));
 
 const server = app.listen(port, () => console.log(`Listening on localhost:${port}`));
 const io = new Server(server);

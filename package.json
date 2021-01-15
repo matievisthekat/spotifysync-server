@@ -1,5 +1,5 @@
 {
-  "name": "tunein",
+  "name": "spotifysync-server",
   "version": "0.0.1",
   "description": "A project so that people can listen to exactly what im listening to on spotify",
   "main": "dist/src/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MatievisTheKat/tunein.git"
+    "url": "git+https://github.com/MatievisTheKat/spotifysync-server.git"
   },
   "author": "Matthew Stead <matthew.stead@matievisthekat.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MatievisTheKat/tunein/issues"
+    "url": "https://github.com/MatievisTheKat/spotifysync-server/issues"
   },
-  "homepage": "https://github.com/MatievisTheKat/tunein#readme",
+  "homepage": "https://github.com/MatievisTheKat/spotifysync-server#readme",
   "devDependencies": {},
   "dependencies": {
     "axios": "^0.21.1",

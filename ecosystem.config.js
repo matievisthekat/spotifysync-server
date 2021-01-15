@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "tunein-server",
+      name: "ss-server",
       script: "src/index.js",
     },
   ],

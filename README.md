@@ -1,6 +1,6 @@
-# TuneIn
+# SpotifySync
 
-A WebSocket server used to transmit information to any TuneIn app that tries to connect to it via its HTTP url. TuneIn does not violate any legal agreements with Spotify.
+A WebSocket server used to transmit information to any SpotifySync app that tries to connect to it via its HTTP url. SpotifySync does not violate any legal agreements with Spotify.
 
 ## Setup
 
