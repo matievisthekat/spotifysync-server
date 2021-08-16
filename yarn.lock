@@ -104,10 +104,10 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.9.tgz#4bd1fcac72eca8d5bec93e76c7fdcbdc1bc2cd4a"
   integrity sha512-zurD1ibz21BRlAOIKP8yhrxlqKx6L9VCwkB5kMiP6nZAhoF5MvC7qS1qPA7nRcr1GJolfkQC7/EAL4hdYejLtg==
 
-"@types/node@^14.14.10":
-  version "14.14.20"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
-  integrity sha512-Y93R97Ouif9JEOWPIUyU+eyIdyRqQR0I8Ez1dzku4hDx34NWh4HbtIc3WNzwB1Y9ULvNGeu5B8h8bVL5cAk4/A==
+"@types/node@>=10.0.0":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.0.1.tgz#70cedfda26af7a2ca073fdcc9beb2fff4aa693f8"
+  integrity sha512-hBOx4SUlEPKwRi6PrXuTGw1z6lz0fjsibcWCM378YxsSu/6+C30L6CR49zIBKHiwNWCYIcOLjg4OHKZaFeLAug==
 
 accepts@~1.3.4, accepts@~1.3.7:
   version "1.3.7"
@@ -491,10 +491,10 @@ engine.io-parser@~4.0.0:
   dependencies:
     base64-arraybuffer "0.1.4"
 
-engine.io@~4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-4.0.6.tgz#7268635d64e2154ab5e7f9ef967ad1744a4c41a9"
-  integrity sha512-rf7HAVZpcRrcKEKddgIzYUnwg0g5HE1RvJaTLwkcfJmce4g+po8aMuE6vxzp6JwlK8FEq/vi0KWN6tA585DjaA==
+engine.io@~4.1.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/engine.io/-/engine.io-4.1.1.tgz#9a8f8a5ac5a5ea316183c489bf7f5b6cf91ace5b"
+  integrity sha512-t2E9wLlssQjGw0nluF6aYyfX8LwYU8Jj0xct+pAhfWfv/YrBn6TSNtEYsgxHIfaMqfrLx07czcMg9bMN6di+3w==
   dependencies:
     accepts "~1.3.4"
     base64id "2.0.0"
@@ -654,24 +654,15 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-fs-extra@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
-  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  dependencies:
-    graceful-fs "^4.2.0"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
-fs-extra@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
-  integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
+fs-extra@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz#5954460c764a8da2094ba3554bf839e6b9a7c86d"
+  integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
   dependencies:
     at-least-node "^1.0.0"
     graceful-fs "^4.2.0"
     jsonfile "^6.0.1"
-    universalify "^1.0.0"
+    universalify "^2.0.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -1421,10 +1412,10 @@ smart-buffer@^4.1.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.1.0.tgz#91605c25d91652f4661ea69ccf45f1b331ca21ba"
   integrity sha512-iVICrxOzCynf/SNaBQCw34eM9jROU/s5rzIhpOvzhzuYHfJR/DhZfDkXiZSgKXfgv26HT3Yni3AV/DGw0cGnnw==
 
-socket.io-adapter@~2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-2.0.3.tgz#372b7cde7a535fc4f4f0d5ac7f73952a3062d438"
-  integrity sha512-2wo4EXgxOGSFueqvHAdnmi5JLZzWqMArjuP4nqC26AtLh5PoCPsaRbRdah2xhcwTAMooZfjYiNVNkkmmSMaxOQ==
+socket.io-adapter@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-2.1.0.tgz#edc5dc36602f2985918d631c1399215e97a1b527"
+  integrity sha512-+vDov/aTsLjViYTwS9fPy5pEtTkrbEKsw2M+oVSoFGw6OD1IpvlV1VPhUzNbofCQ8oyMbdYJqDtGdmHQK6TdPg==
 
 socket.io-parser@~4.0.3:
   version "4.0.3"
@@ -1435,19 +1426,19 @@ socket.io-parser@~4.0.3:
     component-emitter "~1.3.0"
     debug "~4.3.1"
 
-socket.io@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-3.0.5.tgz#b4328116b6b34f76270725a4e35b75e2348d2264"
-  integrity sha512-5yWQ43P/4IttmPCGKDQ3CVocBiJWGpibyhYJxgUhf69EHMzmK8XW0DkmHIoYdLmZaVZJyiEkUqpeC7rSCIqekw==
+socket.io@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-3.1.2.tgz#06e27caa1c4fc9617547acfbb5da9bc1747da39a"
+  integrity sha512-JubKZnTQ4Z8G4IZWtaAZSiRP3I/inpy8c/Bsx2jrwGrTbKeVU5xd6qkKMHpChYeM3dWZSO0QACiGK+obhBNwYw==
   dependencies:
     "@types/cookie" "^0.4.0"
     "@types/cors" "^2.8.8"
-    "@types/node" "^14.14.10"
+    "@types/node" ">=10.0.0"
     accepts "~1.3.4"
     base64id "~2.0.0"
     debug "~4.3.1"
-    engine.io "~4.0.6"
-    socket.io-adapter "~2.0.3"
+    engine.io "~4.1.0"
+    socket.io-adapter "~2.1.0"
     socket.io-parser "~4.0.3"
 
 socks-proxy-agent@5, socks-proxy-agent@^5.0.0:
@@ -1548,16 +1539,6 @@ type-is@~1.6.17, type-is@~1.6.18:
   dependencies:
     media-typer "0.3.0"
     mime-types "~2.1.24"
-
-universalify@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
-  integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
-
-universalify@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
-  integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 
 universalify@^2.0.0:
   version "2.0.0"
