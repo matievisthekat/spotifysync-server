@@ -1,5 +1,7 @@
 # SpotifySync
 
+**:warning: this repository has been archived. if you want this project to be maintained please contact `matievisthekat@gmail.com` or fork this repo :warning:**
+
 A WebSocket server used to transmit information to any SpotifySync app that tries to connect to it via its HTTP url. SpotifySync does not violate any legal agreements with Spotify.
 
 ## Setup
